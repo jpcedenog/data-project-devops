@@ -9,7 +9,7 @@ phases:
     commands:
       - echo "Upgrade Pip and install packages"
       - pip install --upgrade pip
-      - apt-get update && apt-get install build-essential
+      - apt-get update && apt-get install -y build-essential
       - make install
       - mkdir -p ~/.aws/
       # Fake credentials needed by Moto for mocking Boto calls
