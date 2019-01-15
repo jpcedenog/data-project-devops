@@ -12,10 +12,7 @@ phases:
       - make install
       - mkdir -p ~/.aws/
       # Fake credentials needed by Moto for mocking Boto calls
-      - echo "[default]\naws_access_key_id = \
-      FakeKey\naws_secret_access_key = \
-      FakeKey\naws_session_token = FakeKey" >\
-      ~/.aws/credentials
+      - echo "[default]\naws_access_key_id =  FakeKey\naws_secret_access_key = FakeKey\naws_session_token = FakeKey" > ~/.aws/credentials
 
   build:
     commands:
