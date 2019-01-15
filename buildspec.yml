@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  pre-build:
+    commands:
+      - echo Build started on `date`
+
+  install:
+    commands:
+      - echo "Upgrade Pip and install packages"
+      - pip install --upgrade pip
+      - make install
+      - mkdir -p ~/.aws/
+      # Fake credentials needed by Moto for mocking Boto calls
+      - echo "[default]\naws_access_key_id = \
+      FakeKey\naws_secret_access_key = \
+      FakeKey\naws_session_token = FakeKey" >\
+      ~/.aws/credentials
+
+  build:
+    commands:
+      - echo "Run lint and test"
+      - make lint
+      - PYTHONPATH=".";make test
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
