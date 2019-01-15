@@ -1,0 +1,8 @@
+*.csv
+.pragai-aws
+.vscode
+.coverage
+*.gz
+*.bak
+__pycache__
+.ipynb_checkpoints

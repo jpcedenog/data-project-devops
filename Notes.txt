@@ -1,0 +1,3 @@
+conda config --add channels conda-forge
+conda config --add channels anaconda
+conda config --append channels intel
