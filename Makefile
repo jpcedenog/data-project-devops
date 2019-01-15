@@ -6,7 +6,7 @@ verify:
 setup:
 	conda create --name .data-driven-project --yes
 
-install:
+install: setup
 	conda install --name .data-driven-project --yes --file requirements.txt
 
 lint:
