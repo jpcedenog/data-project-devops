@@ -4,10 +4,10 @@ verify:
 	@echo '$(CONDA_PREFIX)'
 
 setup:
-	conda create --name .data-driven-project --yes
+	conda create --name data-driven-project --yes
 
-install: setup
-	conda install --name .data-driven-project --yes --file requirements.txt
+install:
+	conda install --name data-driven-project --yes --file requirements.txt
 
 lint:
 	pylint --disable=R,C datadrivenlibs
@@ -17,6 +17,6 @@ test:
 	PYTHONPATH=. && pytest --nbval-lax notebooks/*.ipynb
 
 uninstall:
-	conda env remove --name .data-driven-project --yes
+	conda env remove --name data-driven-project --yes
 
 all: install lint test

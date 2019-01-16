@@ -4,6 +4,8 @@ phases:
   pre_build:
     commands:
       - echo Build started on `date`
+      - echo "Creating environment..."
+      - make setup
 
   install:
     commands:
