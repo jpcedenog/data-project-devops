@@ -12,6 +12,7 @@ phases:
       - pip install --upgrade pip
       - conda update conda
       - apt-get update && apt-get install -y build-essential
+      - echo "channels:\n  - defaults\n\n  - conda-forge" > ~/.condarc
       - make setup
       - make install
       - mkdir -p ~/.aws/
