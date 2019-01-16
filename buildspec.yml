@@ -21,7 +21,7 @@ phases:
 
   build:
     commands:
-      - echo "Run lint and test"
+      - echo "Run lint and tests"
       - source activate data-driven-project
       - make lint
       - PYTHONPATH=".";make test
