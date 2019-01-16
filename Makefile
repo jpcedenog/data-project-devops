@@ -1,13 +1,12 @@
-# For this to work, $CONDA_PREFIX and $CONDA_PREFIX/Scripts need to be on $PATH
 verify:
 	@echo '$(OS)'
 	@echo '$(CONDA_PREFIX)'
 
 setup:
-	conda create --name data-driven-project --yes
+	conda create --name data_driven_project --yes
 
 install:
-	conda install --name data-driven-project --yes --file requirements.txt
+	conda install --name data_driven_project --yes --file requirements.txt
 
 lint:
 	pylint --disable=R,C datadrivenlibs
@@ -17,6 +16,6 @@ test:
 	PYTHONPATH=. && pytest --nbval-lax notebooks/*.ipynb
 
 uninstall:
-	conda env remove --name data-driven-project --yes
+	conda env remove --name data_driven_project --yes
 
 all: install lint test
