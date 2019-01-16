@@ -5,7 +5,6 @@ phases:
     commands:
       - echo Build started on `date`
       - echo "Creating environment..."
-      - make setup
 
   install:
     commands:
@@ -13,6 +12,7 @@ phases:
       - pip install --upgrade pip
       - conda update conda
       - apt-get update && apt-get install -y build-essential
+      - make setup
       - make install
       - mkdir -p ~/.aws/
       # Fake credentials needed by Moto for mocking Boto calls
