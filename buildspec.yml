@@ -22,7 +22,6 @@ phases:
   build:
     commands:
       - echo "Run lint and tests"
-      - conda env list
       - export PATH=$PATH:/usr/local/envs/data-driven-project/Scripts
       - make lint
       - PYTHONPATH=".";make test
