@@ -12,8 +12,8 @@ lint:
 	pylint --disable=R,C datadrivenlibs
 
 test:
-	PYTHONPATH=. && pytest -vv --cov=datadrivenlibs tests/*.py
-	PYTHONPATH=. && pytest --nbval-lax notebooks/*.ipynb
+	export PYTHONPATH=. && pytest -vv --cov=datadrivenlibs tests/*.py
+	export PYTHONPATH=. && pytest --nbval-lax notebooks/*.ipynb
 
 uninstall:
 	conda env remove --name data-driven-project --yes
