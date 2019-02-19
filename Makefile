@@ -13,7 +13,7 @@ lint:
 
 test:
 	export PYTHONPATH=. && pytest -vv --cov=datadrivenlibs tests/*.py
-	export PYTHONPATH=. && pytest --nbval-lax notebooks/*.ipynb
+	#export PYTHONPATH=. && pytest --nbval-lax notebooks/*.ipynb
 
 uninstall:
 	conda env remove --name data-driven-project --yes
