@@ -22,3 +22,8 @@ RUN echo "[default]\naws_access_key_id =  FakeKey\naws_secret_access_key = FakeK
 #Clone project repository
 #RUN git clone git@github.com:jpcedenog/data-project-devops.git /var/data-project-devops
 RUN git clone https://github.com/jpcedenog/data-project-devops.git /var/data-project-devops
+RUN cd /var/data/data-project-devops
+RUN make setup
+RUN make install
+RUN source activate data-driven-project
+RUN pip install -r requirements_pip.txt
