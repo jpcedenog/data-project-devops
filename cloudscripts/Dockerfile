@@ -6,4 +6,6 @@ RUN mkdir -p ~/.aws/ && echo "[default]\naws_access_key_id =  FakeKey\naws_secre
 
 RUN git clone https://github.com/jpcedenog/data-project-devops.git /var/data-project-devops
 WORKDIR /var/data-project-devops
-RUN make setup && make install && source activate data-driven-project && pip install -r requirements_pip.txt
+RUN make setup && make install
+RUN conda activate data-driven-project
+RUN pip install -r requirements_pip.txt
